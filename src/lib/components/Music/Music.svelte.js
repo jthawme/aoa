@@ -193,7 +193,17 @@ export let audioCtx = $state({ current: null });
 
 export const instantiatePlayer = () => {
 	if (!musicPlayer.current) {
-		musicPlayer.current = new Audio();
+		/** @type {HTMLAudioElement | null} */
+		let audioEl = document.querySelector('#player-element');
+
+		if (!audioEl) {
+			audioEl = document.createElement('audio');
+			audioEl.id = 'player-element';
+			audioEl.setAttribute('playsinline', 'true');
+			document.body.appendChild(audioEl);
+		}
+
+		musicPlayer.current = audioEl;
 		musicPlayer.current.onended = onTrackEnded;
 		musicPlayer.current.onpause = () => {
 			playerContext.playing = false;
@@ -230,12 +240,12 @@ export const instantiatePlayer = () => {
 		navigator.mediaSession.setActionHandler('stop', () => {
 			PLAYER.STOP();
 		});
-		navigator.mediaSession.setActionHandler('seekbackward', (time) => {
-			time.seekTime && PLAYER.SEEK(time.seekTime);
-		});
-		navigator.mediaSession.setActionHandler('seekforward', (time) => {
-			time.seekTime && PLAYER.SEEK(time.seekTime);
-		});
+		// navigator.mediaSession.setActionHandler('seekbackward', (time) => {
+		// 	time.seekTime && PLAYER.SEEK(time.seekTime);
+		// });
+		// navigator.mediaSession.setActionHandler('seekforward', (time) => {
+		// 	time.seekTime && PLAYER.SEEK(time.seekTime);
+		// });
 		navigator.mediaSession.setActionHandler('seekto', (time) => {
 			time.seekTime && PLAYER.SEEK(time.seekTime);
 		});
@@ -245,6 +255,10 @@ export const instantiatePlayer = () => {
 		navigator.mediaSession.setActionHandler('nexttrack', () => {
 			PLAYER.NEXT();
 		});
+
+		if ('audioSession' in navigator) {
+			navigator.audioSession.type = 'playback';
+		}
 	}
 
 	return () => {
@@ -272,10 +286,6 @@ export const PLAYER = {
 			return;
 		}
 		musicPlayer.current.play();
-
-		if ('audioSession' in navigator) {
-			navigator.audioSession.type = 'playback';
-		}
 	},
 	PAUSE: () => {
 		if (!musicPlayer.current) {
