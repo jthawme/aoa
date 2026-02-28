@@ -1,1 +1,15 @@
 // when jthawme-utils dont cut it
+
+/**
+ *
+ * @param {T[]} arr
+ * @param {number} [chunkSize]
+ * @param {T[][]} [cache]
+ * @template T
+ */
+export const chunk = (arr, chunkSize = 1, cache = []) => {
+	const tmp = [...arr];
+	if (chunkSize <= 0) return cache;
+	while (tmp.length) cache.push(tmp.splice(0, chunkSize));
+	return cache;
+};
