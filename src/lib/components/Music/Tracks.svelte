@@ -137,7 +137,7 @@
 
 	.title,
 	.breadcrumb {
-		color: var(--color-myspace-blue);
+		color: #02339a;
 		text-decoration: underline;
 
 		@include hover {

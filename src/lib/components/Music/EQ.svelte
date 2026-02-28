@@ -67,7 +67,7 @@
 		}
 
 		const columns = 6;
-		const parts = getData(columns + 1);
+		const parts = getData(columns);
 
 		if (!parts) {
 			return;
@@ -89,7 +89,7 @@
 			// ctx.fillStyle = 'red';
 			// ctx.fillRect(0, 0, slice, size.height * avg);
 
-			const rows = Math.round(avg * BARS.length);
+			const rows = Math.max(Math.round(avg * BARS.length), 1);
 
 			for (let y = 0; y < rows; y++) {
 				ctx.translate(0, -sliceY);

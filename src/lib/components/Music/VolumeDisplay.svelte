@@ -10,8 +10,6 @@
 				return 1;
 			}
 
-			console.log(threshold, idx);
-
 			if (Math.ceil(threshold) === idx) {
 				return threshold % 1;
 			}
@@ -19,8 +17,6 @@
 			return 0;
 		});
 	});
-
-	$inspect(parts);
 </script>
 
 <div>

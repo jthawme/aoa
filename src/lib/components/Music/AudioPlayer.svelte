@@ -12,6 +12,7 @@
 	import SoftRange from './SoftRange.svelte';
 	import Volume from './VolumeDisplay.svelte';
 	import VolumeDisplay from './VolumeDisplay.svelte';
+	import BounceText from './BounceText.svelte';
 
 	let currentTrack = $derived(getCurrentTrack());
 	let currentAlbum = $derived(getCurrentAlbum());
@@ -96,7 +97,7 @@
 		<div class="display-window">
 			<div class="display-window-text">
 				{#if currentTrack && currentAlbum}
-					<span>{currentTrack.title}</span>
+					<span><BounceText text={currentTrack.title.trim()} /></span>
 					<span>{currentTrack.artist}</span>
 					<span class:green={true}>{playerStatus}</span>
 				{/if}

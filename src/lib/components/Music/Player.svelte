@@ -88,7 +88,6 @@
 		border: 1px solid black;
 
 		// temporary
-		width: 450px;
 		aspect-ratio: 522 / 400;
 
 		font-size: calc(11px * var(--scale));
@@ -144,6 +143,8 @@
 			padding: var(--player-padding-y) var(--player-padding-x);
 
 			color: var(--player-grey-2);
+
+			font-size: 0.8em;
 		}
 	}
 

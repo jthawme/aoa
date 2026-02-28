@@ -22,7 +22,20 @@
 
 	--color-black: #111;
 
-	--color-myspace-blue: #02339a;
+	--color-grey-1: #e5e5e5;
+
+	--color-myspace-blue-1: #00259F;
+	--color-myspace-blue-2: #5E9ED8;
+	--color-myspace-blue-3: #0000ff;
+
+	--color-table-header: #6699cc;
+	--color-table-cell-1: #b1d0f0;
+	--color-table-cell-2: #d5e8fb;
+
+	--color-myspace-red-1: #C00;
+
+	--color-myspace-orange-1: #FF6600;
+	--color-myspace-orange-2: #ffcc99;
 
 	--standard-easing: cubic-bezier(0.2, 0, 0, 1);
 }
@@ -68,8 +81,10 @@ a {
 
 a:not(:has(div)),
 a:not(:has(img)) {
+	color: var(--color-myspace-blue-1);
+
 	@include hover {
-		opacity: 0.5;
+		color: var(--color-myspace-red-1);
 	}
 }
 
@@ -79,4 +94,30 @@ a:not(:has(img)) {
 
 img {
 	max-width: 100%;
+}
+
+.orange-header {
+	display: block;
+
+	font-weight: bold;
+
+	color: var(--color-myspace-orange-1);
+	background-color: var(--color-myspace-orange-2);
+
+	padding: 0.1em 0.2em;
+	margin: 0.2em 0;
+}
+
+.transparent-header {
+	font-weight: bold;
+
+	color: var(--color-black);
+	padding: 0.2em;
+	
+	em {
+		color: var(--color-myspace-red-1);
+
+		font-size: 1.2em;
+		font-style: normal;
+	}
 }

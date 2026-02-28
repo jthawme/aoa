@@ -13,6 +13,11 @@
 		url: 'https://jthaw.club',
 		seperator: '–'
 	});
+
+	setContext('info', {
+		displayName: 'All Obstacles Aside',
+		friends: 58008
+	});
 </script>
 
 {@render children()}
