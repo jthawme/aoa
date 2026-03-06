@@ -1,0 +1,47 @@
+---
+title: Midnights 2
+media:
+  - src: ./CSC_0059.JPG
+  - src: ./CSC_0060.JPG
+  - src: ./CSC_0061.JPG
+  - src: ./CSC_0063.JPG
+  - src: ./DSC_0001.JPG
+  - src: ./DSC_0002.JPG
+  - src: ./DSC_0003.JPG
+  - src: ./DSC_0004.JPG
+  - src: ./DSC_0005.JPG
+  - src: ./DSC_0006.JPG
+  - src: ./DSC_0007.JPG
+  - src: ./DSC_0010.JPG
+  - src: ./DSC_0011.JPG
+  - src: ./DSC_0014.JPG
+  - src: ./DSC_0015.JPG
+  - src: ./DSC_0016.JPG
+  - src: ./DSC_0018.JPG
+  - src: ./DSC_0020.JPG
+  - src: ./DSC_0021.JPG
+  - src: ./DSC_0022.JPG
+  - src: ./DSC_0023.JPG
+  - src: ./DSC_0024.JPG
+  - src: ./DSC_0025.JPG
+  - src: ./DSC_0026.JPG
+  - src: ./DSC_0027.JPG
+  - src: ./DSC_0028.JPG
+  - src: ./DSC_0032.JPG
+  - src: ./DSC_0035.JPG
+  - src: ./DSC_0037.JPG
+  - src: ./DSC_0038.JPG
+  - src: ./DSC_0041.JPG
+  - src: ./DSC_0042.JPG
+  - src: ./DSC_0043.JPG
+  - src: ./DSC_0045.JPG
+  - src: ./DSC_0046.JPG
+  - src: ./DSC_0047.JPG
+  - src: ./DSC_0048.JPG
+  - src: ./DSC_0051.JPG
+  - src: ./DSC_0052.JPG
+  - src: ./DSC_0053.JPG
+  - src: ./DSC_0054.JPG
+  - src: ./DSC_0056.JPG
+  - src: ./DSC_0057.JPG
+---

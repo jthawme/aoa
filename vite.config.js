@@ -35,7 +35,7 @@ export default defineConfig({
 
 		FaviconManifest({
 			manifest: {
-				name: 'Site Template'
+				name: 'All Obstacles Aside - MySpace.com'
 			}
 		})
 	],

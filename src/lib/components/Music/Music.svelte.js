@@ -362,7 +362,13 @@ export const TRACKS = [
 				id: 'space',
 				title: 'Space',
 				artist: 'All Obstacles Aside',
-				src: `/music/demos/space.mp`
+				src: `/music/demos/space.mp3`
+			},
+			{
+				id: 'riff',
+				title: 'Riff',
+				artist: 'All Obstacles Aside',
+				src: `/music/demos/riff.mp3`
 			}
 		]
 	}

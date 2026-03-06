@@ -1,124 +1,125 @@
 <script>
+	import Box from '$lib/components/Box.svelte';
 	import Comments from '$lib/components/Comments/Comments.svelte';
 	import FriendsSpace from '$lib/components/Friends/FriendsSpace.svelte';
+	import Markdown from '$lib/components/Markdown.svelte';
 	import Player from '$lib/components/Music/Player.svelte';
 	import Seo from '$lib/components/SEO.svelte';
+	import { getContext } from 'svelte';
+
+	const { displayName, genre } = getContext('info');
+
+	const info = $state([
+		['Member Since', '3/1/07'],
+		['Band Website', '[aoa.jthaw.club](https://aoa.jthaw.club)'],
+		[
+			'Band Members',
+			"Andy O'Carroll - Guitar<br/>Danny Jones - Drums<br/>Harry Brown - Bass<br/>Jonny Thaw - Guitar/Synth<br/>Ollie Allport - Singer"
+		]
+	]);
+
+	const about = $state(
+		`We are just a bunch of cool guys doing cool pop punk synth from Shrewsbury, UK  
+
+For fans of Motion City Soundtrack, Farewell, KFC, Ghostbusters`
+	);
+
+	const contact = $state([
+		['/', 'Send Message'],
+		['/', 'Forward to friend'],
+		['/', 'Add to Friends'],
+		['/', 'Add to Favorites'],
+		['/', 'Instant Message'],
+		['/', 'Block User'],
+		['/', 'Add to Group'],
+		['/', 'Rank User']
+	]);
 </script>
 
 <Seo />
 
-<main>
-	<header>
-		<div>
-			<span>MySpace.com | Home</span>
+<section>
+	<div class="left">
+		<div class="group profile">
+			<h1>{displayName}</h1>
+			<span>{genre}</span>
 
-			<span>Help | Signup</span>
+			<div class="profile-info">
+				<div class="profile-info-image">
+					<a href="/media"><img src="/images/profile.jpg" alt="" /></a>
+
+					<a href="/media">View more pics</a>
+				</div>
+
+				<div class="profile-info-text">
+					<em>"We are more rockin than your granny's chair"</em>
+					<br /><br />
+					shrewsbury<br />
+					United Kingdom<br />
+					<br />
+					Profile Views: 69420
+					<br /><br /><br />
+					Last Login: 4/7/2008
+				</div>
+			</div>
 		</div>
 
-		<nav>
-			<span>Home</span>
-			<span>Browse</span>
-			<span>Search</span>
-			<span>Invite</span>
-			<span>Film</span>
-			<span>Mail</span>
-			<span>Blog</span>
-			<span>Favorites</span>
-			<span>Forum</span>
-			<span>Groups</span>
-			<span>Events</span>
-			<span>Videos</span>
-			<span>Music</span>
-			<span>Classifieds</span>
-		</nav>
-	</header>
+		<div class="group">
+			<Box title={`Contacting ${displayName}`}>
+				<div class="table">
+					{#each contact as item}
+						<span><a href={item[0]}>{item[1]}</a></span>
+					{/each}
+				</div>
+			</Box>
+		</div>
 
-	<section>
-		<div class="left">left</div>
+		<div class="group url">
+			<span><b>MySpace URL:</b></span><br />
+			https://aoa.jthaw.club
+		</div>
 
-		<div class="right">
+		<div class="group">
+			<Box title={`${displayName} General Info`}>
+				{#each info as row}
+					<div class="table-row">
+						<span class="table-row-header">
+							{row[0]}
+						</span>
+						<span class="table-row-cell">
+							<Markdown content={row[1]} inline />
+						</span>
+					</div>
+				{/each}
+			</Box>
+		</div>
+	</div>
+
+	<div class="right">
+		<div class="group">
 			<Player />
+		</div>
 
+		<div class="group big">
+			<span class="orange-header">About {displayName}</span>
+
+			<Markdown content={about} />
+		</div>
+
+		<div class="group">
 			<FriendsSpace />
 		</div>
+	</div>
 
-		<div class="bottom">
-			<Comments />
-		</div>
-	</section>
-
-	<footer>
-		<ul>
-			<li>About</li>
-			<li>FAQ</li>
-			<li>Terms</li>
-			<li>Privacy</li>
-			<li>Safety Tips</li>
-			<li>Contact Myspace</li>
-			<li>Report Inappropriate Content</li>
-			<li>Promote!</li>
-			<li>Advertise</li>
-		</ul>
-
-		<span>©2003-20011 MySpace.com. All Rights Reserved.</span>
-	</footer>
-</main>
+	<div class="bottom">
+		<Comments />
+	</div>
+</section>
 
 <style lang="scss">
-	:global(body) {
+	:global(body.homepage) {
 		background-image: url('/images/bg/3.jpg');
 		background-size: 64px;
-	}
-
-	main {
-		background-color: white;
-
-		margin: 0 1rem;
-
-		max-width: calc(1080px - 4em);
-
-		@include desktop {
-			margin: 0 auto;
-		}
-	}
-
-	header {
-		background-color: var(--color-myspace-blue-1);
-		color: white;
-
-		> div {
-			display: flex;
-
-			justify-content: space-between;
-
-			padding: 2rem 1rem;
-		}
-	}
-
-	nav {
-		background-color: var(--color-myspace-blue-2);
-
-		display: flex;
-
-		flex-wrap: wrap;
-
-		justify-content: center;
-		color: white;
-
-		gap: 0.8ch;
-
-		padding: 0.2em 0;
-
-		overflow: hidden;
-
-		span {
-			white-space: nowrap;
-
-			&:not(:last-child):after {
-				content: ' | ';
-				color: var(--color-black);
-			}
-		}
 	}
 
 	section {
@@ -144,31 +145,55 @@
 		padding: 1rem;
 	}
 
-	footer {
-		text-align: center;
+	.group {
+		margin-bottom: 3rem;
 
-		background-color: var(--color-grey-1);
+		&.big {
+			margin: 1rem 0 2rem;
+		}
+	}
 
-		padding: 1rem;
+	.profile {
+		h1 {
+			font-size: 1.4em;
 
-		ul {
-			list-style: none;
+			margin: 0;
+		}
 
-			padding: 0;
-			margin: 0 0 1rem;
+		&-info {
+			display: grid;
 
-			display: flex;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
 
-			flex-wrap: wrap;
-			justify-content: center;
+			padding: 1rem 0;
 
-			gap: 0.5em;
-			color: var(--color-myspace-blue-1);
+			&-image {
+				display: flex;
 
-			li:not(:last-child):after {
-				content: ' | ';
-				color: var(--color-black);
+				flex-direction: column;
+
+				align-items: center;
+				gap: 0.5rem;
 			}
 		}
+	}
+
+	.url {
+		font-size: 0.8em;
+
+		border: 1px solid currentColor;
+
+		padding: 0.25em 0.5em;
+	}
+
+	.table {
+		display: grid;
+
+		grid-template-columns: repeat(2, 1fr);
+
+		gap: 0.5rem;
+
+		padding: 0.5rem;
 	}
 </style>

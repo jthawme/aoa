@@ -31,11 +31,14 @@
 	--color-table-header: #6699cc;
 	--color-table-cell-1: #b1d0f0;
 	--color-table-cell-2: #d5e8fb;
+	--color-table-header-color: #336699;
 
 	--color-myspace-red-1: #C00;
 
 	--color-myspace-orange-1: #FF6600;
 	--color-myspace-orange-2: #ffcc99;
+	--color-myspace-orange-3: #FF9933;
+	--color-myspace-orange-4: #FAD6B4;
 
 	--standard-easing: cubic-bezier(0.2, 0, 0, 1);
 }
@@ -52,6 +55,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 
 	color: var(--color-black);
+}
+
+body {
+	background-color: var(--color-grey-1);
 }
 
 button,
@@ -94,6 +101,19 @@ a:not(:has(img)) {
 
 img {
 	max-width: 100%;
+	height: auto;
+}
+
+.blue-header {
+	display: block;
+
+	font-weight: bold;
+
+	color: white;
+	background-color: var(--color-table-header);
+
+	padding: 0.1em 0.2em;
+	margin: 0;
 }
 
 .orange-header {
@@ -119,5 +139,41 @@ img {
 
 		font-size: 1.2em;
 		font-style: normal;
+	}
+}
+
+.table-row {
+	display: grid;
+
+	grid-template-columns: 1fr 1.5fr;
+
+	gap: 2px;
+	margin: 2px 2px;
+
+	&:first-child {
+		margin-top: 4px;
+	}
+	&:last-child {
+		margin-bottom: 2px;
+	}
+
+	&-header,
+	&-cell {
+		padding: 0.25rem;
+	}
+
+	&-header {
+		background-color: var(--color-table-cell-1);
+
+		color: var(--color-table-header-color);
+		font-weight: bold;
+	}
+
+	&-cell {
+		background-color: var(--color-table-cell-2);
+
+		a {
+			font-weight: bold;
+		}
 	}
 }

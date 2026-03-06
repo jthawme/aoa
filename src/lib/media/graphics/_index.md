@@ -1,0 +1,45 @@
+---
+title: graphics
+media:
+  - src: ./001 copy 2.jpg
+  - src: ./001 copy 3.jpg
+  - src: ./001 copy 4.jpg
+  - src: ./001.jpg
+  - src: ./2.jpg
+  - src: ./3.jpg
+  - src: ./andy.jpg
+  - src: ./banner up.jpg
+  - src: ./banner.jpg
+  - src: ./beaver.jpg
+  - src: ./bulletin.jpg
+  - src: ./cawaii.jpeg
+  - src: ./comp.jpg
+  - src: ./contact.jpg
+  - src: ./cool2.jpg
+  - src: ./cool3.jpg
+  - src: ./danny.jpg
+  - src: ./demo.jpg
+  - src: ./farewell.jpg
+  - src: ./gig.jpg
+  - src: ./gigs.jpg
+  - src: ./halloween is scary.jpg
+  - src: ./harry.jpg
+  - src: ./heheh.jpg
+  - src: ./jamie.jpg
+  - src: ./jonny.jpg
+  - src: ./l_f2995128e91c3d730645079cfd5a38b9.jpg
+  - src: ./logo.jpg
+  - src: ./name.jpg
+  - src: ./ollie.jpg
+  - src: ./poster.jpg
+  - src: ./psp.jpg
+  - src: ./santa copy.jpg
+  - src: ./scan.jpg
+  - src: ./scan1 copy.jpg
+  - src: ./Scan0001.jpeg
+  - src: ./scan1.jpg
+  - src: ./t 001.jpg
+  - src: ./Untitled.jpeg
+  - src: ./vaults.jpeg
+  - src: ./wah.jpg
+---

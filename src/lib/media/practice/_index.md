@@ -1,0 +1,42 @@
+---
+title: practice
+media:
+  - src: ./IMG_1596.JPG
+  - src: ./IMG_1606.jpg
+  - src: ./IMG_1615.jpg
+  - src: ./IMG_1636.jpg
+  - src: ./IMG_1672.JPG
+  - src: ./IMG_1675.jpg
+  - src: ./IMG_1677.JPG
+  - src: ./IMG_1684.jpg
+  - src: ./IMG_1691.jpg
+  - src: ./IMG_1699.jpg
+  - src: ./IMG_2071.JPG
+  - src: ./IMG_2075.JPG
+  - src: ./IMG_2083.jpg
+  - src: ./IMG_2104.JPG
+  - src: ./IMG_2132_1.jpg
+  - src: ./IMG_2144.JPG
+  - src: ./IMG_2146.jpg
+  - src: ./IMG_2159.jpg
+  - src: ./IMG_2163.jpg
+  - src: ./IMG_2166.jpg
+  - src: ./IMG_2172.jpg
+  - src: ./IMG_2177.jpg
+  - src: ./IMG_2179.JPG
+  - src: ./IMG_2182.jpg
+  - src: ./IMG_2188.jpg
+  - src: ./IMG_2190.jpg
+  - src: ./IMG_2200.jpg
+  - src: ./IMG_2203.jpg
+  - src: ./IMG_2204.jpg
+  - src: ./IMG_2206.jpg
+  - src: ./IMG_2207.jpg
+  - src: ./IMG_2239Black and white.jpg
+  - src: ./IMG_2247.JPG
+  - src: ./IMG_2257.JPG
+  - src: ./IMG_2269.jpg
+  - src: ./IMG_2272.JPG
+  - src: ./IMG_2274.JPG
+  - src: ./IMG_2281.JPG
+---
