@@ -32,7 +32,7 @@ media:
   - src: ./IMG_2204.jpg
   - src: ./IMG_2206.jpg
   - src: ./IMG_2207.jpg
-  - src: ./IMG_2239Black and white.jpg
+  - src: ./IMG_2239Blackandwhite.jpg
   - src: ./IMG_2247.JPG
   - src: ./IMG_2257.JPG
   - src: ./IMG_2269.jpg
