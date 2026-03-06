@@ -6,7 +6,7 @@
 {#snippet imageDisplay(/** @type {string | import('vite-imagetools').Picture} */ img)}
 	{#if typeof img === 'string'}
 		<img src={img} alt="" />
-	{:else}
+	{:else if 'sources' in img}
 		<enhanced:img src={img} alt="" />
 	{/if}
 {/snippet}
