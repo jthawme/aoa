@@ -9,8 +9,8 @@
 	let { data, children } = $props();
 
 	setContext('site', {
-		title: 'TEMPLATE',
-		description: 'TEMPLATE DESCRIPTION',
+		title: 'All Obstacles Aside - MySpace.com',
+		description: "We are more rockin than your granny's chair",
 		url: 'https://jthaw.club',
 		seperator: '–'
 	});
@@ -18,6 +18,7 @@
 	setContext('info', {
 		displayName: 'All Obstacles Aside',
 		genre: `Pop punk`,
+		description: `We are more rockin than your granny's chair`,
 		friends: 58008
 	});
 

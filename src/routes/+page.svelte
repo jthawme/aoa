@@ -7,7 +7,7 @@
 	import Seo from '$lib/components/SEO.svelte';
 	import { getContext } from 'svelte';
 
-	const { displayName, genre } = getContext('info');
+	const { displayName, genre, description } = getContext('info');
 
 	const info = $state([
 		['Member Since', '3/1/07'],
@@ -52,7 +52,7 @@ For fans of Motion City Soundtrack, Farewell, KFC, Ghostbusters`
 				</div>
 
 				<div class="profile-info-text">
-					<em>"We are more rockin than your granny's chair"</em>
+					<em>"{description}"</em>
 					<br /><br />
 					shrewsbury<br />
 					United Kingdom<br />

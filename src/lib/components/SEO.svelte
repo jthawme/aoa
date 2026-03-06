@@ -10,7 +10,7 @@
 	let { title, description } = $props();
 	// export let title = "Home | Example.com”;
 	// export let description = “Description of your website.”;
-	// export let image = "https://example.com/your-logo.png”;
+	const image = 'https://aoa.jthaw.club/social.jpg';
 
 	let fullTitle = $derived(
 		[title, siteTitle].filter((item) => !!item).join(` ${getContext('site').seperator ?? '|'} `)
@@ -27,12 +27,12 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description ?? siteDescription} />
-	<!-- <meta property="og:image" content={image}> -->
+	<meta property="og:image" content={image} />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content={siteURL} />
 	<meta property="twitter:url" content={fullURL} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description ?? siteDescription} />
-	<!-- <meta name="twitter:image" content={image}> -->
+	<meta name="twitter:image" content={image} />
 </svelte:head>

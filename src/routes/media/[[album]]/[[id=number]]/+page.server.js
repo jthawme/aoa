@@ -2,25 +2,25 @@ import { error } from '@sveltejs/kit';
 
 const getFolderKey = (str) => str.match(/media\/(.+)\//)?.[1];
 
-export async function entries() {
-	const folders = await import.meta.glob('$lib/media/**/*.md', { eager: true });
+// export async function entries() {
+// 	const folders = await import.meta.glob('$lib/media/**/*.md', { eager: true });
 
-	return Object.entries(folders).flatMap(([key, obj]) => {
-		const folder = getFolderKey(key);
+// 	return Object.entries(folders).flatMap(([key, obj]) => {
+// 		const folder = getFolderKey(key);
 
-		return [
-			...new Array(obj.media.length).fill(0).map((_, idx) => {
-				return {
-					album: folder,
-					id: idx.toString()
-				};
-			}),
-			{
-				album: folder
-			}
-		];
-	});
-}
+// 		return [
+// 			...new Array(obj.media.length).fill(0).map((_, idx) => {
+// 				return {
+// 					album: folder,
+// 					id: idx.toString()
+// 				};
+// 			}),
+// 			{
+// 				album: folder
+// 			}
+// 		];
+// 	});
+// }
 
 /** @type {import('../$types').PageServerLoad} */
 export async function load({ params }) {
