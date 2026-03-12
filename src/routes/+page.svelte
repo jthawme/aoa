@@ -1,13 +1,21 @@
 <script>
+	import { getContext } from 'svelte';
+	import MyspacePlayer from 'svelte-myspace-player';
+
 	import Box from '$lib/components/Box.svelte';
 	import Comments from '$lib/components/Comments/Comments.svelte';
 	import FriendsSpace from '$lib/components/Friends/FriendsSpace.svelte';
 	import Markdown from '$lib/components/Markdown.svelte';
-	import Player from '$lib/components/Music/Player.svelte';
 	import Seo from '$lib/components/SEO.svelte';
-	import { getContext } from 'svelte';
+	import { TRACKS } from '$lib/js/data';
 
 	const { displayName, genre, description } = getContext('info');
+
+	const stats = $state({
+		totalPlays: 69000,
+		playsToday: 420,
+		downloadsToday: 0
+	});
 
 	const info = $state([
 		['Member Since', '3/1/07'],
@@ -34,6 +42,14 @@ For fans of Motion City Soundtrack, Farewell, KFC, Ghostbusters`
 		['/', 'Add to Group'],
 		['/', 'Rank User']
 	]);
+
+	function onTrackPlay() {
+		stats.playsToday += 1;
+	}
+
+	function onTrackDownload() {
+		stats.downloadsToday += 1;
+	}
 </script>
 
 <Seo />
@@ -67,7 +83,7 @@ For fans of Motion City Soundtrack, Farewell, KFC, Ghostbusters`
 		<div class="group">
 			<Box title={`Contacting ${displayName}`}>
 				<div class="table">
-					{#each contact as item}
+					{#each contact as item (item[1])}
 						<span><a href={item[0]}>{item[1]}</a></span>
 					{/each}
 				</div>
@@ -81,7 +97,7 @@ For fans of Motion City Soundtrack, Farewell, KFC, Ghostbusters`
 
 		<div class="group">
 			<Box title={`${displayName} General Info`}>
-				{#each info as row}
+				{#each info as row (row[1])}
 					<div class="table-row">
 						<span class="table-row-header">
 							{row[0]}
@@ -97,7 +113,14 @@ For fans of Motion City Soundtrack, Farewell, KFC, Ghostbusters`
 
 	<div class="right">
 		<div class="group">
-			<Player />
+			<MyspacePlayer
+				totalPlaysCount={stats.totalPlays}
+				playsTodayCount={stats.playsToday}
+				downloadsCount={stats.downloadsToday}
+				onPlay={onTrackPlay}
+				onDownload={onTrackDownload}
+				tracks={TRACKS}
+			/>
 		</div>
 
 		<div class="group big">
