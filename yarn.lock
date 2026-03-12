@@ -1953,9 +1953,9 @@ svelte-markdown@^0.4.1:
     marked "^5.1.2"
 
 svelte-myspace-player@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/svelte-myspace-player/-/svelte-myspace-player-1.0.1.tgz#7acf85881eff27abc895845ef34ae31c361d1550"
-  integrity sha512-UJi3qznf9of+ZsXhkA/qS2ZsBWpf2O3djgI1JhwFID79+ak0aSgvJTeB3cTqKESP6bf/8BQ6nSyEN7qUtTtcog==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/svelte-myspace-player/-/svelte-myspace-player-1.0.3.tgz#9f868147bef5000720f7d89fff583653bc18b089"
+  integrity sha512-J3KfJB4zK2xJpS5zBJFdOOtolGN3hWjBSpjW1Xyebc2j+UAmr/vqNRg1SSjK/I/R8mt+8aeyK3KVgfPEhsAIwA==
 
 svelte-parse-markup@^0.1.5:
   version "0.1.5"
